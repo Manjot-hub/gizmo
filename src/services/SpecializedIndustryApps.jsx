@@ -2,15 +2,15 @@ import React from "react";
 import { motion } from "framer-motion";
 
 import heroDashboard from "../assets/hero-dashboard.svg";
-import caseStudy from "../assets/case-study.svg";
-import defaultSvg from "../assets/defaultSvg.svg";
+import caseStudy from "../assets/case-study.png";
+import defaultSvg from "../assets/defaultSvg.png";
 
-import industryModel from "../assets/feature-industry-model.svg";
-import compliance from "../assets/feature-compliance.svg";
-import workflow from "../assets/feature-workflow.svg";
-import analytics from "../assets/feature-analytics.svg";
-import scalable from "../assets/feature-scalable.svg";
-import integration from "../assets/feature-integration.svg";
+import industryModel from "../assets/feature-industry-model.png";
+import compliance from "../assets/feature-compliance.png";
+import workflow from "../assets/feature-workflow.png";
+import analytics from "../assets/feature-analytics.png";
+import scalable from "../assets/feature-scalable.png";
+import integration from "../assets/feature-integration.png";
 
 const featureSvgs = {
   "Industry-Specific AI Models": industryModel,

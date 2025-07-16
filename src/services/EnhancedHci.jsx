@@ -8,8 +8,8 @@ import hciFacial from "../assets/hci-facial.png";
 import hciGesture from "../assets/hci-gesture.png";
 import hciPersonalized from "../assets/hci-personalized.png";
 import hciConversational from "../assets/hci-conversational.png";
-import caseStudyImage from "../assets/case-study.svg";
-import defaultSvg from "../assets/defaultSvg.svg";
+import caseStudyImage from "../assets/case-study.png";
+import defaultSvg from "../assets/defaultSvg.png";
 
 const featureSvgs = {
   "Natural Language Processing (NLP)": hciNlp,

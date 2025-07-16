@@ -14,6 +14,7 @@ import EnhancedHci from "./services/EnhancedHci.jsx";
 import PersonalizedExperiences from "./services/PersonalizedExperiences.jsx";
 import AutomationEfficiency from "./services/AutomationEfficiency.jsx";
 import DataAnalysisInsights from "./services/DataAnalysisInsights.jsx";
+import BlogPage from "./pages/BlogPage.jsx";
 
 function App() {
   const isLoggedIn = localStorage.getItem("loggedIn") === "true";
@@ -42,6 +43,7 @@ function App() {
             isLoggedIn ? <SecondHome darkMode={darkMode} setDarkMode={setDarkMode} /> : <Navigate to="/login" replace />
           }
         />
+        <Route path="/blog" element={<BlogPage />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/cloud-integration" element={<CloudIntegration />} />
         <Route path="/specialized-industry-apps" element={<SpecializedIndustryApps />} />

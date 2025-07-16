@@ -151,6 +151,10 @@ export default function HomePage({ darkMode, setDarkMode }) {
                 Contact
               </a>
 
+              <Link to="/blog" className="hover:text-[#D8B4FE]">
+                Blog
+              </Link>
+
               <Link to="/about-us" className="hover:text-[#D8B4FE]">
                 About Us
               </Link>

@@ -8,8 +8,8 @@ import personalizedDynamic from "../assets/personalized-dynamic.svg";
 import personalizedEmail from "../assets/personalized-email.svg";
 import personalizedCustomization from "../assets/personalized-customization.svg";
 import personalizedMultichannel from "../assets/personalized-multichannel.svg";
-import caseStudyImage from "../assets/case-study.svg";
-import defaultSvg from "../assets/defaultSvg.svg";
+import caseStudyImage from "../assets/case-study.png";
+import defaultSvg from "../assets/defaultSvg.png";
 
 const featureSvgs = {
   "Behavioral Tracking": personalizedBehavior,
