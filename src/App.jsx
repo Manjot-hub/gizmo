@@ -9,6 +9,11 @@ import ForgotPassword from './pages/ForgotPassword.jsx';
 import SecondHome from './pages/SecondHome.jsx';
 import AboutUs from "./pages/AboutUs.jsx";
 import CloudIntegration from "./services/CloudIntegration.jsx";
+import SpecializedIndustryApps from "./services/SpecializedIndustryApps.jsx";
+import EnhancedHci from "./services/EnhancedHci.jsx";
+import PersonalizedExperiences from "./services/PersonalizedExperiences.jsx";
+import AutomationEfficiency from "./services/AutomationEfficiency.jsx";
+import DataAnalysisInsights from "./services/DataAnalysisInsights.jsx";
 
 function App() {
   const isLoggedIn = localStorage.getItem("loggedIn") === "true";
@@ -39,6 +44,11 @@ function App() {
         />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/cloud-integration" element={<CloudIntegration />} />
+        <Route path="/specialized-industry-apps" element={<SpecializedIndustryApps />} />
+        <Route path="/enhanced-hci" element={<EnhancedHci />} />
+        <Route path="/personalized-experiences" element={<PersonalizedExperiences />} />
+        <Route path="/automation-efficiency" element={<AutomationEfficiency />} />
+        <Route path="/data-analysis-insights" element={<DataAnalysisInsights />} />
       </Routes>
       {showHeaderFooter && <Footer />}
     </div>

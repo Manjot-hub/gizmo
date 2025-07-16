@@ -115,16 +115,16 @@ export default function HomePage({ darkMode, setDarkMode }) {
                     <div className="py-1">
                       {[
                         {
-                          name: "Cloud Integration",
-                          path: "/cloud-integration",
+                          name: "Automation and Efficiency",
+                          path: "/automation-efficiency",
                         },
-                        { name: "Data Analytics", path: "/data-analytics" },
+                        { name: "Data Analysis and Insights", path: "/data-analysis-insights" },
                         { name: "AI Solutions", path: "/ai-solutions" },
-                        { name: "Automation Tools", path: "/automation-tools" },
-                        { name: "Customer Support", path: "/customer-support" },
+                        { name: "Personalized Experiences", path: "/personalized-experiences" },
+                        { name: "Enhanced Human-Computer Interaction", path: "/enhanced-hci" },
                         {
-                          name: "Security & Compliance",
-                          path: "/security-compliance",
+                          name: "Specialized Industry Applications",
+                          path: "/specialized-industry-apps",
                         },
                       ].map((item, index) => (
                         <Menu.Item key={index}>
