@@ -90,7 +90,12 @@ export default function EnhancedHci() {
   return (
     <div className="bg-black text-[#E5E5E5] font-sans">
       {/* HERO SECTION */}
-      <section className="py-16 max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+      <section
+        className="py-16 max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12 bg-no-repeat"
+        style={{
+          backgroundImage: `url(${heroHci})`,
+        }}
+      >
         <div className="flex-1">
           <motion.h1
             className="text-4xl md:text-5xl font-bold text-[#FFD700] mb-4"
@@ -101,7 +106,8 @@ export default function EnhancedHci() {
             Smarter, Seamless Interaction Between Humans and Machines
           </motion.h1>
           <p className="mb-6 text-lg">
-            Empower users to communicate naturally with systems through voice, gestures, emotions, and beyond.
+            Empower users to communicate naturally with systems through voice,
+            gestures, emotions, and beyond.
           </p>
           <div className="flex gap-4 flex-wrap">
             <button className="bg-[#FFD700] text-black font-bold py-3 px-6 rounded hover:shadow-[0_0_10px_#FFD700] transition">
@@ -128,7 +134,9 @@ export default function EnhancedHci() {
 
       {/* KEY FEATURES */}
       <section className="py-16 max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-semibold text-center mb-12 text-[#FFD700]">Key Features</h2>
+        <h2 className="text-3xl font-semibold text-center mb-12 text-[#FFD700]">
+          Key Features
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, idx) => (
             <motion.div
@@ -159,7 +167,9 @@ export default function EnhancedHci() {
 
       {/* BENEFITS */}
       <section className="py-16 max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-semibold text-center mb-12 text-[#FFD700]">Benefits</h2>
+        <h2 className="text-3xl font-semibold text-center mb-12 text-[#FFD700]">
+          Benefits
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, idx) => (
             <motion.div
@@ -171,9 +181,13 @@ export default function EnhancedHci() {
               viewport={{ once: true }}
               className="bg-[#111] border border-gray-700 rounded-xl p-6 hover:border-[#FFD700] hover:shadow-[0_0_10px_#FFD700] transition-colors"
             >
-              <h3 className="text-xl font-bold text-[#FFD700] mb-2">{benefit.title}</h3>
+              <h3 className="text-xl font-bold text-[#FFD700] mb-2">
+                {benefit.title}
+              </h3>
               <p>{benefit.desc}</p>
-              <p className="text-sm text-[#FFD700] mt-2 italic">{benefit.example}</p>
+              <p className="text-sm text-[#FFD700] mt-2 italic">
+                {benefit.example}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -181,20 +195,41 @@ export default function EnhancedHci() {
 
       {/* HOW IT WORKS */}
       <section className="py-16 max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl font-semibold text-center mb-12 text-[#FFD700]">How It Works</h2>
+        <h2 className="text-3xl font-semibold text-center mb-12 text-[#FFD700]">
+          How It Works
+        </h2>
         <div className="space-y-8 text-lg">
-          <p><span className="text-[#FFD700]">🟡 Step 1:</span> Capture User Input — Voice, gesture, facial expression, or typed message.</p>
-          <p><span className="text-[#FFD700]">🟠 Step 2:</span> AI Processing — Natural language understanding, vision models, or sentiment detection are applied.</p>
-          <p><span className="text-[#FFD700]">🟢 Step 3:</span> Smart Response — AI executes tasks, responds appropriately, or adapts UI in real time.</p>
-          <p><span className="text-[#FFD700]">🔵 Step 4:</span> Continuous Learning — The system improves over time with more interaction data.</p>
+          <p>
+            <span className="text-[#FFD700]">🟡 Step 1:</span> Capture User
+            Input — Voice, gesture, facial expression, or typed message.
+          </p>
+          <p>
+            <span className="text-[#FFD700]">🟠 Step 2:</span> AI Processing —
+            Natural language understanding, vision models, or sentiment
+            detection are applied.
+          </p>
+          <p>
+            <span className="text-[#FFD700]">🟢 Step 3:</span> Smart Response —
+            AI executes tasks, responds appropriately, or adapts UI in real
+            time.
+          </p>
+          <p>
+            <span className="text-[#FFD700]">🔵 Step 4:</span> Continuous
+            Learning — The system improves over time with more interaction data.
+          </p>
           <p className="mt-4 text-[#FFD700]">💡 Example Flow:</p>
-          <p>User opens a learning app → Speaks a question → AI recognizes voice, detects confusion on face → Offers help with simpler explanation.</p>
+          <p>
+            User opens a learning app → Speaks a question → AI recognizes voice,
+            detects confusion on face → Offers help with simpler explanation.
+          </p>
         </div>
       </section>
 
       {/* CASE STUDY */}
       <section className="py-16 max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-semibold text-center mb-12 text-[#FFD700]">Case Study</h2>
+        <h2 className="text-3xl font-semibold text-center mb-12 text-[#FFD700]">
+          Case Study
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -225,7 +260,8 @@ export default function EnhancedHci() {
               <li>💡 User frustration dropped by 65%</li>
             </ul>
             <p className="mt-4 italic text-[#FFD700]">
-              “Our platform went from just functional to deeply personal and intuitive — users felt like they were truly ‘heard’.”
+              “Our platform went from just functional to deeply personal and
+              intuitive — users felt like they were truly ‘heard’.”
             </p>
           </motion.div>
         </div>
@@ -233,13 +269,17 @@ export default function EnhancedHci() {
 
       {/* PRICING */}
       <section className="py-16 max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-semibold text-center mb-12 text-[#FFD700]">Pricing</h2>
+        <h2 className="text-3xl font-semibold text-center mb-12 text-[#FFD700]">
+          Pricing
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="bg-[#111] border border-gray-700 rounded-xl p-6 hover:border-[#FFD700] hover:shadow-[0_0_10px_#FFD700] transition-colors text-center"
           >
-            <h3 className="text-2xl font-bold text-[#FFD700] mb-4">🎧 Basic Plan — $0/month</h3>
+            <h3 className="text-2xl font-bold text-[#FFD700] mb-4">
+              🎧 Basic Plan — $0/month
+            </h3>
             <ul className="space-y-2">
               <li>✔ Voice & Text Interaction</li>
               <li>✔ 1 AI Bot / Interface</li>
@@ -251,7 +291,9 @@ export default function EnhancedHci() {
             whileHover={{ scale: 1.05 }}
             className="bg-[#111] border border-gray-700 rounded-xl p-6 hover:border-[#FFD700] hover:shadow-[0_0_10px_#FFD700] transition-colors text-center"
           >
-            <h3 className="text-2xl font-bold text-[#FFD700] mb-4">🧩 Pro Plan — $79/month</h3>
+            <h3 className="text-2xl font-bold text-[#FFD700] mb-4">
+              🧩 Pro Plan — $79/month
+            </h3>
             <ul className="space-y-2">
               <li>✔ NLP + Emotion Detection</li>
               <li>✔ Customizable Voice/Chat UI</li>
@@ -264,7 +306,9 @@ export default function EnhancedHci() {
             whileHover={{ scale: 1.05 }}
             className="bg-[#111] border border-gray-700 rounded-xl p-6 hover:border-[#FFD700] hover:shadow-[0_0_10px_#FFD700] transition-colors text-center"
           >
-            <h3 className="text-2xl font-bold text-[#FFD700] mb-4">🏢 Enterprise — Custom Pricing</h3>
+            <h3 className="text-2xl font-bold text-[#FFD700] mb-4">
+              🏢 Enterprise — Custom Pricing
+            </h3>
             <ul className="space-y-2">
               <li>✔ Multi-modal Interaction (Voice + Gesture + Emotion)</li>
               <li>✔ Brand-trained AI Agents</li>

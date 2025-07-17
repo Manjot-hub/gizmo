@@ -119,7 +119,7 @@ export default function HomePage({ darkMode, setDarkMode }) {
                           path: "/automation-efficiency",
                         },
                         { name: "Data Analysis and Insights", path: "/data-analysis-insights" },
-                        { name: "AI Solutions", path: "/ai-solutions" },
+                        { name: "Content Generation and Creativity", path: "/generative-ai" },
                         { name: "Personalized Experiences", path: "/personalized-experiences" },
                         { name: "Enhanced Human-Computer Interaction", path: "/enhanced-hci" },
                         {
@@ -147,9 +147,9 @@ export default function HomePage({ darkMode, setDarkMode }) {
                 </Transition>
               </Menu>
 
-              <a href="#" className="hover:text-[#D8B4FE] transition">
+              <Link to="/contact" className="hover:text-[#D8B4FE]">
                 Contact
-              </a>
+              </Link>
 
               <Link to="/blog" className="hover:text-[#D8B4FE]">
                 Blog

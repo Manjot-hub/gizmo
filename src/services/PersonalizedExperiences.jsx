@@ -29,7 +29,8 @@ const features = [
   {
     title: "Real-Time Content Recommendations",
     desc: "Suggest products, articles, or videos based on live behavior.",
-    example: 'E-commerce site shows winter coats when user searches for “cold weather.”',
+    example:
+      "E-commerce site shows winter coats when user searches for “cold weather.”",
   },
   {
     title: "Dynamic UI Personalization",
@@ -39,17 +40,19 @@ const features = [
   {
     title: "Email & Notification Personalization",
     desc: "Send custom subject lines and content per user.",
-    example: 'Email: “Hi Alex, here’s a course you might love!”',
+    example: "Email: “Hi Alex, here’s a course you might love!”",
   },
   {
     title: "Product/Service Customization",
     desc: "Tailor offerings to user profiles.",
-    example: "Fitness app suggests plans based on age, goals, and past progress.",
+    example:
+      "Fitness app suggests plans based on age, goals, and past progress.",
   },
   {
     title: "Multi-Channel Experience Sync",
     desc: "Seamless personalization across web, app, email, chatbot, etc.",
-    example: "User adds item to cart on mobile → sees same on web with discount reminder.",
+    example:
+      "User adds item to cart on mobile → sees same on web with discount reminder.",
   },
 ];
 
@@ -90,7 +93,12 @@ export default function PersonalizedExperiences() {
   return (
     <div className="bg-black text-[#E5E5E5] font-sans">
       {/* HERO SECTION */}
-      <section className="py-16 max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+      <section
+        className="py-16 max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12 bg-no-repeat"
+        style={{
+          backgroundImage: `url(${heroPersonalized})`,
+        }}
+      >
         <div className="flex-1">
           <motion.h1
             className="text-4xl md:text-5xl font-bold text-[#FFD700] mb-4"
@@ -101,7 +109,8 @@ export default function PersonalizedExperiences() {
             Deliver Tailored Experiences That Truly Connect
           </motion.h1>
           <p className="mb-6 text-lg">
-            Use AI to personalize content, recommendations, and interactions for every individual — in real time.
+            Use AI to personalize content, recommendations, and interactions for
+            every individual — in real time.
           </p>
           <div className="flex gap-4 flex-wrap">
             <button className="bg-[#FFD700] text-black font-bold py-3 px-6 rounded hover:shadow-[0_0_10px_#FFD700] transition">
@@ -128,7 +137,9 @@ export default function PersonalizedExperiences() {
 
       {/* KEY FEATURES */}
       <section className="py-16 max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-semibold text-center mb-12 text-[#FFD700]">Key Features</h2>
+        <h2 className="text-3xl font-semibold text-center mb-12 text-[#FFD700]">
+          Key Features
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, idx) => (
             <motion.div
@@ -145,9 +156,13 @@ export default function PersonalizedExperiences() {
                 alt={feature.title}
                 className="h-16 w-16 mx-auto mb-4"
               />
-              <h3 className="text-xl font-bold text-[#FFD700] mb-2 text-center">{feature.title}</h3>
+              <h3 className="text-xl font-bold text-[#FFD700] mb-2 text-center">
+                {feature.title}
+              </h3>
               <p className="text-center">{feature.desc}</p>
-              <p className="text-center text-sm text-[#FFD700] mt-2 italic">{feature.example}</p>
+              <p className="text-center text-sm text-[#FFD700] mt-2 italic">
+                {feature.example}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -155,7 +170,9 @@ export default function PersonalizedExperiences() {
 
       {/* BENEFITS */}
       <section className="py-16 max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-semibold text-center mb-12 text-[#FFD700]">Benefits</h2>
+        <h2 className="text-3xl font-semibold text-center mb-12 text-[#FFD700]">
+          Benefits
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, idx) => (
             <motion.div
@@ -167,9 +184,13 @@ export default function PersonalizedExperiences() {
               viewport={{ once: true }}
               className="bg-[#111] border border-gray-700 rounded-xl p-6 hover:border-[#FFD700] hover:shadow-[0_0_10px_#FFD700] transition-colors"
             >
-              <h3 className="text-xl font-bold text-[#FFD700] mb-2">{benefit.title}</h3>
+              <h3 className="text-xl font-bold text-[#FFD700] mb-2">
+                {benefit.title}
+              </h3>
               <p>{benefit.desc}</p>
-              <p className="text-sm text-[#FFD700] mt-2 italic">{benefit.example}</p>
+              <p className="text-sm text-[#FFD700] mt-2 italic">
+                {benefit.example}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -177,20 +198,43 @@ export default function PersonalizedExperiences() {
 
       {/* HOW IT WORKS */}
       <section className="py-16 max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl font-semibold text-center mb-12 text-[#FFD700]">How It Works</h2>
+        <h2 className="text-3xl font-semibold text-center mb-12 text-[#FFD700]">
+          How It Works
+        </h2>
         <div className="space-y-8 text-lg">
-          <p><span className="text-[#FFD700]">🟡 Step 1:</span> Track User Data — Capture user behavior, preferences, and context (browsing, clicks, time spent).</p>
-          <p><span className="text-[#FFD700]">🟠 Step 2:</span> AI Analysis — AI processes user patterns, profiles, and engagement data in real-time.</p>
-          <p><span className="text-[#FFD700]">🟢 Step 3:</span> Deliver Personalized Output — From UI to emails to content suggestions — everything adapts to each user.</p>
-          <p><span className="text-[#FFD700]">🔵 Step 4:</span> Continuous Learning — AI refines experiences as it learns more about each individual.</p>
+          <p>
+            <span className="text-[#FFD700]">🟡 Step 1:</span> Track User Data —
+            Capture user behavior, preferences, and context (browsing, clicks,
+            time spent).
+          </p>
+          <p>
+            <span className="text-[#FFD700]">🟠 Step 2:</span> AI Analysis — AI
+            processes user patterns, profiles, and engagement data in real-time.
+          </p>
+          <p>
+            <span className="text-[#FFD700]">🟢 Step 3:</span> Deliver
+            Personalized Output — From UI to emails to content suggestions —
+            everything adapts to each user.
+          </p>
+          <p>
+            <span className="text-[#FFD700]">🔵 Step 4:</span> Continuous
+            Learning — AI refines experiences as it learns more about each
+            individual.
+          </p>
           <p className="mt-4 text-[#FFD700]">💡 Example Flow:</p>
-          <p>User logs into fitness app → AI analyzes past workouts → Suggests a customized 4-week strength training plan → App layout changes to match new goal.</p>
+          <p>
+            User logs into fitness app → AI analyzes past workouts → Suggests a
+            customized 4-week strength training plan → App layout changes to
+            match new goal.
+          </p>
         </div>
       </section>
 
       {/* CASE STUDY */}
       <section className="py-16 max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-semibold text-center mb-12 text-[#FFD700]">Case Study</h2>
+        <h2 className="text-3xl font-semibold text-center mb-12 text-[#FFD700]">
+          Case Study
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -221,7 +265,9 @@ export default function PersonalizedExperiences() {
               <li>💬 Positive user feedback on “smart suggestions”</li>
             </ul>
             <p className="mt-4 italic text-[#FFD700]">
-              “ShopSmart now feels like a boutique tailored for every shopper. Personalization transformed our user experience — and our numbers.”
+              “ShopSmart now feels like a boutique tailored for every shopper.
+              Personalization transformed our user experience — and our
+              numbers.”
             </p>
           </motion.div>
         </div>
@@ -229,13 +275,17 @@ export default function PersonalizedExperiences() {
 
       {/* PRICING */}
       <section className="py-16 max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-semibold text-center mb-12 text-[#FFD700]">Pricing</h2>
+        <h2 className="text-3xl font-semibold text-center mb-12 text-[#FFD700]">
+          Pricing
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="bg-[#111] border border-gray-700 rounded-xl p-6 hover:border-[#FFD700] hover:shadow-[0_0_10px_#FFD700] transition-colors text-center"
           >
-            <h3 className="text-2xl font-bold text-[#FFD700] mb-4">🎈 Free Plan — $0/month</h3>
+            <h3 className="text-2xl font-bold text-[#FFD700] mb-4">
+              🎈 Free Plan — $0/month
+            </h3>
             <ul className="space-y-2">
               <li>✔ 1 Personalization Rule</li>
               <li>✔ Website Content Suggestions</li>
@@ -247,7 +297,9 @@ export default function PersonalizedExperiences() {
             whileHover={{ scale: 1.05 }}
             className="bg-[#111] border border-gray-700 rounded-xl p-6 hover:border-[#FFD700] hover:shadow-[0_0_10px_#FFD700] transition-colors text-center"
           >
-            <h3 className="text-2xl font-bold text-[#FFD700] mb-4">🎯 Growth Plan — $59/month</h3>
+            <h3 className="text-2xl font-bold text-[#FFD700] mb-4">
+              🎯 Growth Plan — $59/month
+            </h3>
             <ul className="space-y-2">
               <li>✔ Dynamic Product & Content Recommendations</li>
               <li>✔ A/B Testing</li>
@@ -260,7 +312,9 @@ export default function PersonalizedExperiences() {
             whileHover={{ scale: 1.05 }}
             className="bg-[#111] border border-gray-700 rounded-xl p-6 hover:border-[#FFD700] hover:shadow-[0_0_10px_#FFD700] transition-colors text-center"
           >
-            <h3 className="text-2xl font-bold text-[#FFD700] mb-4">🏢 Enterprise — Custom Pricing</h3>
+            <h3 className="text-2xl font-bold text-[#FFD700] mb-4">
+              🏢 Enterprise — Custom Pricing
+            </h3>
             <ul className="space-y-2">
               <li>✔ Unlimited Personalization</li>
               <li>✔ AI Behavioral Clustering</li>

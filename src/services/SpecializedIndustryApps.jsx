@@ -93,7 +93,11 @@ export default function SpecializedIndustryApps() {
     <div className="bg-black text-[#E5E5E5] font-sans">
 
       {/* HERO SECTION */}
-      <section className="py-16 max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+      <section className="py-16 max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12 bg-no-repeat"
+      style={{
+                backgroundImage: `url(${heroDashboard})`,
+              }}
+      >
         <div className="flex-1">
           <motion.h1
             className="text-4xl md:text-5xl font-bold text-[#FFD700] mb-4"
