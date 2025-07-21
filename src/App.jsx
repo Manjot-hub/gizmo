@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
@@ -24,17 +24,25 @@ function App() {
   const [darkMode, setDarkMode] = useState(true);
   const location = useLocation();
 
+  useEffect(() => {
+    const html = document.documentElement;
+    if (darkMode) {
+      html.classList.add("dark");
+    } else {
+      html.classList.remove("dark");
+    }
+  }, [darkMode]);
+
   // Paths where Header and Footer should NOT be shown
-  const noHeaderFooter = ["/login", "/signup", "/forgot-password", "/"];
+  const noHeaderFooter = ["/login", "/signup", "/forgot-password", "/", "/home"];
   const showHeaderFooter = !noHeaderFooter.includes(location.pathname);
 
   return (
-    <div className={darkMode ? "dark" : ""}>
-      {showHeaderFooter && <Header />}
-      
+    <div>
+      {showHeaderFooter && <Header darkMode={darkMode} setDarkMode={setDarkMode} />}
       <Routes>
         <Route path="/" element={<WelcomePage />} />
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard darkMode={darkMode} setDarkMode={setDarkMode} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
@@ -45,18 +53,18 @@ function App() {
             isLoggedIn ? <SecondHome darkMode={darkMode} setDarkMode={setDarkMode} /> : <Navigate to="/login" replace />
           }
         />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/blog" element={<BlogPage />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/cloud-integration" element={<CloudIntegration />} />
-        <Route path="/specialized-industry-apps" element={<SpecializedIndustryApps />} />
-        <Route path="/enhanced-hci" element={<EnhancedHci />} />
-        <Route path="/personalized-experiences" element={<PersonalizedExperiences />} />
-        <Route path="/automation-efficiency" element={<AutomationEfficiency />} />
-        <Route path="/data-analysis-insights" element={<DataAnalysisInsights />} />
+        <Route path="/contact" element={<ContactPage darkMode={darkMode} setDarkMode={setDarkMode} />} />
+        <Route path="/blog" element={<BlogPage darkMode={darkMode} setDarkMode={setDarkMode} />} />
+        <Route path="/about-us" element={<AboutUs darkMode={darkMode} setDarkMode={setDarkMode} />} />
+        <Route path="/cloud-integration" element={<CloudIntegration darkMode={darkMode} setDarkMode={setDarkMode} />} />
+        <Route path="/specialized-industry-apps" element={<SpecializedIndustryApps darkMode={darkMode} setDarkMode={setDarkMode} />} />
+        <Route path="/enhanced-hci" element={<EnhancedHci darkMode={darkMode} setDarkMode={setDarkMode} />} />
+        <Route path="/personalized-experiences" element={<PersonalizedExperiences darkMode={darkMode} setDarkMode={setDarkMode} />} />
+        <Route path="/automation-efficiency" element={<AutomationEfficiency darkMode={darkMode} setDarkMode={setDarkMode} />} />
+        <Route path="/data-analysis-insights" element={<DataAnalysisInsights darkMode={darkMode} setDarkMode={setDarkMode} />} />
       </Routes>
-      
-      {showHeaderFooter && <Footer />}
+      <Footer />
+      {/* {showHeaderFooter && } */}
     </div>
   );
 }

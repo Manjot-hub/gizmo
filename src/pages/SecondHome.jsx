@@ -47,13 +47,29 @@ function InsightCard({ icon, title, desc, more }) {
   );
 }
 
-const SecondHome = () => {
+const SecondHome = ({ darkMode, setDarkMode }) => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
 
   return (
-    <div className="bg-[#121212] text-white">
+    <div className={darkMode ? "bg-[#121212] text-white" : "bg-white text-[#222]"}>
+      <header className="flex justify-end items-center px-8 py-6">
+        <button
+          onClick={() => typeof setDarkMode === 'function' ? setDarkMode(prev => !prev) : null}
+          className={darkMode ? "text-[#FFD600] hover:text-[#5A6F73] transition" : "text-[#5A6F73] hover:text-[#FFD600] transition"}
+        >
+          {darkMode ? (
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-6 w-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1.5m0 15V21m9-9h-1.5M4.5 12H3m15.364-6.364l-1.06 1.06M6.696 17.304l-1.06 1.06m12.728 0l-1.06-1.06M6.696 6.696l-1.06-1.06M12 7.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5z" />
+            </svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-6 w-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
+            </svg>
+          )}
+        </button>
+      </header>
       {/* Home Intro */}
       <section className="py-20 flex justify-center items-center">
         <div data-aos="fade-up">

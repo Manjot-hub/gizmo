@@ -8,19 +8,35 @@ const fadeUp = {
 };
 
 // Service3Hero Component
-const Service3Hero = () => (
+const Service3Hero = ({ darkMode, setDarkMode }) => (
   <motion.section
     initial="hidden"
     whileInView="visible"
     viewport={{ once: true }}
     variants={fadeUp}
-    className="bg-[#0c0d0c] text-white py-20 text-center px-4 bg-no-repeat"
+    className={darkMode ? "bg-[#0c0d0c] text-white py-20 text-center px-4 bg-no-repeat" : "bg-white text-[#222] py-20 text-center px-4 bg-no-repeat"}
     style={{
       backgroundImage: `url(${heroPersonalized})`,
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
     }}
   >
+    <header className="flex justify-end items-center px-8 py-6">
+      <button
+        onClick={() => typeof setDarkMode === 'function' ? setDarkMode(prev => !prev) : null}
+        className={darkMode ? "text-[#e3d271] hover:text-[#5A6F73] transition" : "text-[#5A6F73] hover:text-[#e3d271] transition"}
+      >
+        {darkMode ? (
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-6 w-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1.5m0 15V21m9-9h-1.5M4.5 12H3m15.364-6.364l-1.06 1.06M6.696 17.304l-1.06 1.06m12.728 0l-1.06-1.06M6.696 6.696l-1.06-1.06M12 7.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5z" />
+          </svg>
+        ) : (
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-6 w-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
+          </svg>
+        )}
+      </button>
+    </header>
     <motion.h1
       variants={fadeUp}
       className="text-4xl md:text-5xl font-bold mb-4 text-[#e3d271]"

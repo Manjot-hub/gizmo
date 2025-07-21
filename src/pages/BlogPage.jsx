@@ -12,7 +12,7 @@ import post1 from "../assets/blog-post1.png";
 import post2 from "../assets/blog-post2.png";
 import post3 from "../assets/blog-post3.png";
 
-export default function BlogPage() {
+export default function BlogPage({ darkMode, setDarkMode }) {
   const categories = [
     {
       title: "AI in Industry",
@@ -98,7 +98,24 @@ export default function BlogPage() {
   ];
 
   return (
-    <div className="bg-black text-[#E5E5E5] font-sans">
+    <div className={darkMode ? "bg-black text-[#E5E5E5] font-sans" : "bg-white text-[#222] font-sans"}>
+      {/* HEADER WITH TOGGLE */}
+      <header className="flex justify-end items-center px-8 py-6">
+        <button
+          onClick={() => typeof setDarkMode === 'function' ? setDarkMode(prev => !prev) : null}
+          className={darkMode ? "text-[#FFD700] hover:text-[#5A6F73] transition" : "text-[#5A6F73] hover:text-[#FFD700] transition"}
+        >
+          {darkMode ? (
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-6 w-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1.5m0 15V21m9-9h-1.5M4.5 12H3m15.364-6.364l-1.06 1.06M6.696 17.304l-1.06 1.06m12.728 0l-1.06-1.06M6.696 6.696l-1.06-1.06M12 7.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5z" />
+            </svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-6 w-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
+            </svg>
+          )}
+        </button>
+      </header>
       {/* HERO SECTION */}
       <section
         className="py-16 bg-center bg-cover bg-no-repeat"

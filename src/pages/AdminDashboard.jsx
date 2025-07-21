@@ -95,17 +95,15 @@ const serviceCards = [
 ];
 
 /* ------------- main ------------- */
-const AdminDashboard = () => {
-  const [dark, setDark] = useState(true);
-
+const AdminDashboard = ({ darkMode, setDarkMode }) => {
   return (
     <div
       className={`min-h-screen ${
-        dark ? "bg-[#0c0d0c]" : "bg-gray-100"
+        darkMode ? "bg-[#0c0d0c]" : "bg-gray-100"
       } text-white flex`}
     >
       {/* SIDE RAIL */}
-      <SideRail dark={dark} setDark={setDark} />
+      <SideRail dark={darkMode} setDark={setDarkMode} />
 
       {/* SCROLLABLE CONTENT */}
       <main className="flex-1 p-6 md:p-8 space-y-10 overflow-y-auto">
@@ -145,7 +143,7 @@ const AdminDashboard = () => {
         {/* ORDERS TABLE */}
         <section>
           <h2 className="text-2xl font-bold mb-4 text-[#e3d271]">
-            Recent Orders
+            Recently used services
           </h2>
           <div className="overflow-x-auto">
             <table className="min-w-full bg-[#1a1a1a]/50 rounded-xl">
@@ -263,19 +261,6 @@ const SideRail = ({ dark, setDark }) => (
       )
     )}
     <div className="flex-1" />
-    <button
-      onClick={() => setDark(!dark)}
-      className="p-3 rounded-xl hover:bg-[#e3d271]/20 transition text-[#e3d271]"
-      title="Toggle theme"
-    >
-      {dark ? "☀️" : "🌙"}
-    </button>
-    <button
-      className="p-3 rounded-xl hover:bg-red-500/20 transition text-red-500"
-      title="Logout"
-    >
-      <FiLogOut size={24} />
-    </button>
   </aside>
 );
 

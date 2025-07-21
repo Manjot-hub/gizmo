@@ -17,6 +17,14 @@ const users = [
 
 /* ---------- main ---------- */
 const WelcomePage = () => {
+  React.useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    };
+  }, []);
   const navigate = useNavigate();
   const [isFlipped, setIsFlipped] = useState(false); // false = login, true = signup
   const [role, setRole] = useState("user"); // 'user' | 'admin'
@@ -37,6 +45,9 @@ const WelcomePage = () => {
     // Successful user login
     localStorage.setItem("isLoggedIn", "true");
     localStorage.setItem("role", matchedUser.role);
+    // Save userName for initials (use email before @)
+    const userName = email.split("@")[0] || "User";
+    localStorage.setItem("userName", userName.charAt(0).toUpperCase() + userName.slice(1));
     if (matchedUser.role === "admin") {
       navigate("/admin/dashboard");
     } else {
